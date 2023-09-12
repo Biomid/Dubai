@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div>
+    <canvas id="myChart" width="400" height="100" aria-label="Hello ARIA World" role="img"></canvas>
+</div>
+<script>
+    let arr = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', "залупа"];
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: arr,
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3, 88],
+                borderWidth: 3
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
